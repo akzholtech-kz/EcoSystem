@@ -1,0 +1,24 @@
+p {
+  font-size: medium;
+}
+.text-left {
+  line-height: 50px;
+}
+h1 + p {
+  padding-top: 20px;
+}
+.col-md-7 {
+  padding-top: 100px;
+}
+.main-btn {
+  background-color: #008080;
+  border: none;
+  padding: 30px 80px;
+  color: aliceblue;
+  border-radius: 5px;
+  font-size: large;
+  margin: 80px 0 0 130px;
+}
+.main-btn:hover {
+  background-color: #009999;
+}

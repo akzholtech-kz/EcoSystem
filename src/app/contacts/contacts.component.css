@@ -1,0 +1,114 @@
+ul{
+    list-style-type: none;
+}
+.footer {
+  background-color: #dfdfdf;
+}
+.footer__content {
+  padding: 60px 0 80px;
+  display: flex;
+  justify-content: space-between;
+}
+.footer__inner{
+    position: relative;
+}
+.footer__inner-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #363838;
+  line-height: 23px;
+  margin-bottom: 14px;
+  margin-top: 0;
+}
+.footer__inner-text {
+  color: #a1a1a1;
+  margin-bottom: 16px;
+}
+.footer__inner-email {
+    letter-spacing: 1px;
+  color: #363838;
+  font-size: 14px;
+  font-weight: 600;
+  display: inline-block;
+  margin-bottom: 30px;
+  padding-left: 30px;
+  position: relative;
+}
+.footer__inner-email::before{
+    content: '';
+    position: absolute;
+    background-image: url(./../../assets/imgs/envelope.svg);
+    left: 0;
+    top: 4px;
+    width: 16px;
+    height: 12px;
+}
+.footer__inner-form {
+    display: flex;
+}
+.footer__inner-input {
+  padding: 6px 10px 6px 18px;
+  border-radius: 21px;
+  background-color: transparent;
+  border: 1px solid rgba(38, 36, 36, 0.7);
+}
+.footer__inner-btn {
+  background-color: #363838;
+  border: none;
+  color: #fffff0;
+  /* font-weight: 600; */
+  border-radius: 21px;
+  padding: 6px 12px;
+  width: 130px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+.footer__menu-link,
+.footer__social-link{
+    color: #707070;
+    font-size: 14px;
+    font-weight: 400;
+    text-decoration: none;
+}
+.footer__social-link::before{
+  content: '';
+  position: absolute;
+  left: -25px;
+  width: 15px;
+  height: 15px;
+}
+.footer__social-link--facebook::before{
+  background-image: url(./../../assets/imgs/facebook.svg);
+}
+.footer__social-link--instagram::before{
+  background-image: url(./../../assets/imgs/instagram.svg);
+  width: 14px;
+}
+.footer__social-link--pinterest::before{
+    background-image: url(./../../assets/imgs/Pinterest.svg);
+}
+.footer__social-link--whatsapp::before{
+    background-image: url(./../../assets/imgs/whatsapp.svg);
+    width: 14px;
+    height: 14px;
+}
+.footer__social-link--youtube::before{
+    background-image: url(./../../assets/imgs/youtube.svg);
+    width: 17px;
+    height: 12px;
+    top: 3px;
+}
+
+
+.footer__social-item,
+.footer__menu-item{
+    margin-bottom: 15px;
+    position: relative;
+}
+.footer__copyright {
+  background-color: #363838;
+  color: #a1a1a1;
+  text-align: center;
+  padding: 42px 10px 41px;
+  font-size: 16px;
+}

@@ -1,0 +1,10 @@
+.row{
+    margin-bottom: 100px;
+}
+.service-title{
+    font-size: 48px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    padding-right: 10px;
+    margin-bottom: 20px;
+}
