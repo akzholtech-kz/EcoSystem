@@ -1,3 +1,4 @@
+import { ProductService } from './../../product.service';
 import { Product } from './../../product.model';
 import { Component, OnInit } from '@angular/core';
 
@@ -7,17 +8,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./service-table.component.css']
 })
 export class ServiceTableComponent implements OnInit {
-products: Product[] = [
-  new Product("Пластмасса", "https://cdn.teknoblog.ru/wp-content/uploads/2016/07/Plastik-butilka-620x480.jpg"),
-  new Product('Қағаз қалдықтары', "https://sc04.alicdn.com/kf/Uc2ec7e6712d54e9ebb031589e30a2f88z/1056918926/Uc2ec7e6712d54e9ebb031589e30a2f88z.jpg"),
-  new Product("Шыны", "https://htstatic.imgsmail.ru/pic_image/68e4cba8714a573b11f61c063a0661d0/840/499/1664263/"),
-  new Product("Полиэтилен", "https://cpereezd.ru/upload/medialibrary/3de/poli_plenka.jpg"),
-  new Product("Картон", "https://informupack.ru/upload/resize_cache/iblock/9a9/720_395_2/9a9a3b89426bddc7c2fa3108e56b732f.jpg")
+products: Product[] = []
+  constructor( private productService: ProductService) { }
 
-]
-  constructor() { }
-
-  ngOnInit(): void {
+  ngOnInit() {
+    this.products = this.productService.getProducts()
   }
 
 }

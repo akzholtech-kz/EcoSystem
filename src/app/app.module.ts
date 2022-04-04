@@ -1,3 +1,4 @@
+import { ProductService } from './product.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
@@ -12,6 +13,7 @@ import { ServiceEditComponent } from './service-list/service-edit/service-edit.c
 import { ServiceStartComponent } from './service-list/service-start/service-start.component';
 import { ServiceTableComponent } from './service-list/service-table/service-table.component';
 import { ServiceItemComponent } from './service-list/service-table/service-item/service-item.component';
+import { ServiceFormComponent } from './service-list/service-edit/service-form/service-form.component';
 
 
 @NgModule({
@@ -27,12 +29,13 @@ import { ServiceItemComponent } from './service-list/service-table/service-item/
     ServiceEditComponent,
     ServiceStartComponent,
     ServiceTableComponent,
-    ServiceItemComponent
+    ServiceItemComponent,
+    ServiceFormComponent
   ],
   imports: [
     BrowserModule
   ],
-  providers: [],
+  providers: [ProductService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
