@@ -1,6 +1,6 @@
 import { ProductService } from './../../product.service';
 import { Product } from './../../product.model';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-service-table',
@@ -8,11 +8,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./service-table.component.css']
 })
 export class ServiceTableComponent implements OnInit {
-products: Product[] = []
+ products: Product[];
   constructor( private productService: ProductService) { }
 
   ngOnInit() {
-    this.products = this.productService.getProducts()
+   this.products =  this.productService.getProducts()
   }
+ 
 
 }

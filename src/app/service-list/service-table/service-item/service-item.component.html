@@ -1,9 +1,13 @@
-<!-- <a class="list-group-item clearfix">
-    <div class="pull-left">
-        <h5>name</h5>
-    </div>
-    <span class="pull-right">
-        Image
-    </span>
-</a> -->
-<p>service item works</p>
+<a class="list-group-item clearfix"
+(click)="onSelectItem()">
+  <div class="pull-left">
+    <h3 class="list-group-item-heading">{{ product.name }}</h3>
+  </div>
+  <span class="pull-right">
+    <img
+      [src]="product.image"
+      [alt]="product.name"
+      style="height: 50px; width: 80px"
+    />
+  </span>
+</a>

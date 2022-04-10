@@ -1,18 +1,19 @@
-import { ProductService } from './../../product.service';
+import { Component, Input, OnInit } from '@angular/core';
 import { Product } from './../../product.model';
-import { Component, OnInit } from '@angular/core';
+import { ProductService } from './../../product.service';
 
 @Component({
   selector: 'app-service-detail',
   templateUrl: './service-detail.component.html',
-  styleUrls: ['./service-detail.component.css']
+  styleUrls: ['./service-detail.component.css'],
 })
 export class ServiceDetailComponent implements OnInit {
-  products: Product[];
+ @Input() product: Product;
+
   constructor(private productService: ProductService) { }
 
   ngOnInit(){
-    this.products = this.productService.getProducts();
+    
   }
 
 }

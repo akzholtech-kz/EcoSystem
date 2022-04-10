@@ -1,6 +1,6 @@
-import { ProductService } from './../../product.service';
-import { Product } from './../../product.model';
 import { Component, OnInit } from '@angular/core';
+import { Product } from './../../product.model';
+import { ProductService } from './../../product.service';
 
 @Component({
   selector: 'app-service-edit',
@@ -12,7 +12,7 @@ products: Product[];
   constructor(private productService: ProductService) { }
 
   ngOnInit(): void {
-    this.products = this.productService.getProducts()
+  this.products = this.productService.getProducts()
   }
 
 }
