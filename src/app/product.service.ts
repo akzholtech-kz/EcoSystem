@@ -2,6 +2,8 @@ import { Subject } from 'rxjs';
 import { Product } from './product.model';
 export class ProductService {
   selectItem = new Subject<Product>();
+  startingEdit = new Subject<number>();
+
  private  products: Product[] = [
     new Product(
       'Пластмасса',
@@ -17,7 +19,7 @@ export class ProductService {
     ),
     new Product(
       'Шыны',
-      'https://htstatic.imgsmail.ru/pic_image/68e4cba8714a573b11f61c063a0661d0/840/499/1664263/',
+      'https://www.lrsrecycles.com/wp-content/uploads/2017/10/Glass.png',
       0,
       70
     ),
@@ -35,8 +37,12 @@ export class ProductService {
     ),
   ];
 
+
  getProducts() {
      return this.products;
         }
 
+
+
 }
+

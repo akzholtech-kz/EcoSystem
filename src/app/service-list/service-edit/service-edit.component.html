@@ -1,41 +1,47 @@
 <div class="row">
-    <div class="col-xs-10">
-        <app-service-form></app-service-form>
-        <hr>
-        <table>
-            <tr>
-            <th>N</th>
-            <th>Номенкулатур</th>
-            <th>Единица измерение</th>
-            <th>Количество</th>
-            <th>Цена</th>
-            <th>Сумма</th>
-            </tr>
-            <tr class="list-group-table" style="cursor: pointer;" *ngFor="let product of products;let i=index">
-                <td>{{i+1}}</td>
-                <td>{{product.name}}</td>
-                <td>кг</td>
-                <td>{{product.amount}}</td>
-                <td>{{product.price}}</td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td style="font-weight:bolder;">Итог</td>
-                <td>кг</td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-        </table>
-        <!-- <ul class="list-group">
+  <div class="col-xs-10">
+    <app-service-form></app-service-form>
+    <hr />
+    <table>
+      <tr>
+        <th>N</th>
+        <th>Номенкулатур</th>
+        <th>Единица измерение</th>
+        <th>Количество</th>
+        <th>Цена</th>
+        <th>Сумма</th>
+      </tr>
+
+      <tr
+        class="list-group-table"
+        style="cursor: pointer"
+        *ngFor="let item of products; let i = index"
+      >
+        <td>{{ i + 1 }}</td>
+        <td>{{ item.name }}</td>
+        <td>кг</td>
+        <td>{{ item.amount }}</td>
+        <td>{{ item.price }}</td>
+        <td></td>
+      </tr>
+
+      <tr>
+        <td></td>
+        <td style="font-weight: bolder">Итог</td>
+        <td>кг</td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+    <!-- <ul class="list-group">
             <a class="list-group-item" style="cursor: pointer;" *ngFor="let product of products">
             {{product.name}} - {{product.amount}}кг</a>
         </ul> -->
-    </div>
+  </div>
 </div>
 <div class="row">
-    <div class="col-xs-12">
-        <app-service-wait-list></app-service-wait-list>
-    </div>
+  <div class="col-xs-12">
+    <app-service-wait-list></app-service-wait-list>
+  </div>
 </div>

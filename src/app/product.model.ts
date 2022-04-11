@@ -12,3 +12,14 @@ export class Product{
         this.email = email
     }
 }
+
+export class Reqest{
+    public email: string;
+    public product: string;
+    public amount: number
+    constructor(email: string, product: string, amount: number){
+        this.email = email;
+        this.product = product;
+        this.amount = amount;
+    }
+}

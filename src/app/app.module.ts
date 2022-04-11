@@ -1,3 +1,4 @@
+import { DataService } from './shared/data-storage.service';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
@@ -39,7 +40,7 @@ import { ServiceTableComponent } from './service-list/service-table/service-tabl
     BrowserModule,
     FormsModule,
   ],
-  providers: [ProductService],
+  providers: [ProductService, DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
