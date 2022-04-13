@@ -1,7 +1,9 @@
+import { UserInterceptor } from './auth/user-interceptor.service';
 import { DataService } from './shared/data-storage.service';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http'
 import { AboutComponent } from './about/about.component';
 import { AppComponent } from './app.component';
 import { ContactsComponent } from './contacts/contacts.component';
@@ -17,6 +19,7 @@ import { ServiceListComponent } from './service-list/service-list.component';
 import { ServiceStartComponent } from './service-list/service-start/service-start.component';
 import { ServiceItemComponent } from './service-list/service-table/service-item/service-item.component';
 import { ServiceTableComponent } from './service-list/service-table/service-table.component';
+import { AuthComponent } from './auth/auth.component';
 
 
 @NgModule({
@@ -34,13 +37,17 @@ import { ServiceTableComponent } from './service-list/service-table/service-tabl
     ServiceTableComponent,
     ServiceItemComponent,
     ServiceFormComponent,
-    ServiceWaitListComponent
+    ServiceWaitListComponent,
+    AuthComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    HttpClientModule
   ],
-  providers: [ProductService, DataService],
+  providers: [ProductService, DataService, {provide:HTTP_INTERCEPTORS,
+    useClass: UserInterceptor,
+    multi: true},],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

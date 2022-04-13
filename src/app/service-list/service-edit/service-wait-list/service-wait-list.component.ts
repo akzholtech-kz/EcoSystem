@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { WaitList } from './../../../product.model';
+import { ProductService } from './../../../product.service';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-service-wait-list',
@@ -6,10 +8,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./service-wait-list.component.css']
 })
 export class ServiceWaitListComponent implements OnInit {
-data: Date = new Date(2021, 8, 15)
-  constructor() { }
+ data: string;
+ waitlist: WaitList[];
+  constructor(private proSer: ProductService) { }
 
-  ngOnInit(): void {
+  ngOnInit(){
+    this.waitlist = this.proSer.getList()
+   this.proSer.dateSub.subscribe(
+     response =>{
+       this.data = response
+     }
+   )
+   
   }
+  
 
 }

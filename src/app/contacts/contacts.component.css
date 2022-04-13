@@ -98,7 +98,11 @@ ul{
     height: 12px;
     top: 3px;
 }
-
+a{
+  color: #363838;
+  cursor: pointer;
+  text-decoration: none;
+}
 
 .footer__social-item,
 .footer__menu-item{

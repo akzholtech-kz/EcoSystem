@@ -11,5 +11,8 @@ export class MainComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  onSelect(id: string) {
+    document.getElementById(id).scrollIntoView({behavior: 'smooth'})
+  }
 
 }

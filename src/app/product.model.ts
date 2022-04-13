@@ -15,11 +15,26 @@ export class Product{
 
 export class Reqest{
     public email: string;
-    public product: string;
-    public amount: number
-    constructor(email: string, product: string, amount: number){
+    public name: string;
+    public amount: number;
+    // public product: Product;
+    constructor(email: string, name: string, amount: number, product: Product){
         this.email = email;
-        this.product = product;
+        this.name = name;
         this.amount = amount;
+        // this.product = product
+    }
+}
+
+export class WaitList{
+    public name: string;
+    public queue: number;
+    public date: string;
+    public sum: number;
+    constructor(name: string, queue: number, date: string, sum: number){
+        this.name = name;
+        this.queue= queue;
+        this.date = date;
+        this.sum = sum;
     }
 }

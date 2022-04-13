@@ -1,10 +1,17 @@
 import { Subject } from 'rxjs';
-import { Product } from './product.model';
+import { Product, WaitList } from './product.model';
+
 export class ProductService {
   selectItem = new Subject<Product>();
   startingEdit = new Subject<number>();
+  formItem = new Subject<Product>();
+  dateSub = new Subject<string>();
+  
+  private waitlist: WaitList[] = [
+    new WaitList('Выполнено', 1,'2022-03-28' , 45000)
+  ];
 
- private  products: Product[] = [
+  private products: Product[] = [
     new Product(
       'Пластмасса',
       'https://www.expatincroatia.com/wp-content/uploads/2020/02/recycling-plastic-2.jpg',
@@ -37,12 +44,23 @@ export class ProductService {
     ),
   ];
 
+  getProducts() {
+    return this.products;
+  }
 
- getProducts() {
-     return this.products;
-        }
+  getDate(data = new Date()) {
+    const Y = data.getFullYear();
+    const M = data.getMonth() +1;
+    const D = data.getDate() + 2;
 
+    return `${Y}-${M}-${D}`;
+  }
 
+  getList() {
+    return this.waitlist;
+  }
 
+  setList(order: WaitList): any {
+    this.waitlist.push(order);
+  }
 }
-

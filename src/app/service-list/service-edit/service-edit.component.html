@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-xs-10">
-    <app-service-form></app-service-form>
+    <app-service-form [val]="val"></app-service-form>
     <hr />
     <table>
       <tr>
@@ -22,22 +22,19 @@
         <td>кг</td>
         <td>{{ item.amount }}</td>
         <td>{{ item.price }}</td>
-        <td></td>
+        <td>{{item.amount * item.price}}</td>
       </tr>
 
       <tr>
         <td></td>
         <td style="font-weight: bolder">Итог</td>
         <td>кг</td>
+        <td>{{amount}}</td>
         <td></td>
-        <td></td>
-        <td></td>
+        <td>{{val}}</td>
       </tr>
     </table>
-    <!-- <ul class="list-group">
-            <a class="list-group-item" style="cursor: pointer;" *ngFor="let product of products">
-            {{product.name}} - {{product.amount}}кг</a>
-        </ul> -->
+    
   </div>
 </div>
 <div class="row">

@@ -1,6 +1,6 @@
-<div class="row">
+<div class="row" id="request">
   <div class="col-xs-12">
-    <h3 class="text-left">Оставить заявку</h3>
+    <h1 class="text-left">Оставить заявку</h1>
     <form (ngSubmit)="onAddItem(f)" #f="ngForm">
       <div class="row">
         <div class="col-sm-3">
@@ -11,7 +11,7 @@
           class="form-control" 
           name="email"
           ngModel
-          required
+          [disabled]="disableMode"
           />
         </div>
         <div class="col-sm-3 form-group">
@@ -32,16 +32,16 @@
           class="form-control" 
           name="amount"
           ngModel
-          required
           [pattern]="'^[1-9]+[0-9]*$'"
+          required
           />
         </div>
       </div>
       <div class="row">
         <div class="col-xs-12">
-          <button class="btn btn-primary" type="submit">Изменить</button>
+          <button class="btn btn-primary" type="submit" [disabled]="!f.valid">Добавить</button>
           <!-- <button class="btn btn-danger" type="button">Удалить</button> -->
-          <button class="btn btn-success" type="button" [disabled]="!f.valid">Отправить</button>
+          <button class="btn btn-success" type="button" (click)="onSave()" [disabled]="!disableMode">Отправить</button>
         </div>
       </div>
     </form>
