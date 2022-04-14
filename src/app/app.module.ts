@@ -1,4 +1,4 @@
-import { UserInterceptor } from './auth/user-interceptor.service';
+import { UserInterceptor } from './author/user-interceptor.service';
 import { DataService } from './shared/data-storage.service';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -19,7 +19,7 @@ import { ServiceListComponent } from './service-list/service-list.component';
 import { ServiceStartComponent } from './service-list/service-start/service-start.component';
 import { ServiceItemComponent } from './service-list/service-table/service-item/service-item.component';
 import { ServiceTableComponent } from './service-list/service-table/service-table.component';
-import { AuthComponent } from './auth/auth.component';
+import { AuthComponent } from './author/auth.component';
 
 
 @NgModule({

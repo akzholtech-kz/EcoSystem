@@ -6,6 +6,7 @@ export class ProductService {
   startingEdit = new Subject<number>();
   formItem = new Subject<Product>();
   dateSub = new Subject<string>();
+  authentic = new Subject<boolean>();
   
   private waitlist: WaitList[] = [
     new WaitList('Выполнено', 1,'2022-03-28' , 45000)

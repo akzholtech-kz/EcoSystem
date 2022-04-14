@@ -1,25 +1,21 @@
 <nav class="navbar navbar-default">
-  <div class="container-fluid">
+  <div class="container">
     <div class="navbar-header">
       <a href="#" class="navbar-brand">Logo</a>
     </div>
     <ul class="nav navbar-nav" style="color: white">
       <li><a role="button" (click)="onScroll('main')">Главная</a></li>
       <li *ngIf="!isAuthenticated">
-        <a>Авторизация</a>
+        <a (click)="onScroll('author')"> Авторизация</a>
       </li>
-      <li *ngIf="isAuthenticated"><a role="button" (click)="onScroll('service')">Услуги</a></li>
       <li *ngIf="isAuthenticated"><a role="button" (click)="onScroll('about')">О Компании</a></li>
-      <li *ngIf="isAuthenticated"><a role="button" (click)="onScroll('partners')">Партнеры</a></li>
-      <li *ngIf="isAuthenticated"> <a role="button" (click)="onScroll('contacts')">Контакты</a></li>
+      <li *ngIf="isAuthenticated"><a role="button" (click)="onScroll('service')">Услуги</a></li>
+      <!-- <li><a role="button" (click)="onScroll('partners')">Партнеры</a></li> -->
+      <li><a role="button" (click)="onScroll('contacts')">Контакты</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
-      <li>
-        <a href="#"><span class="glyphicon glyphicon-user"></span> Sign up</a>
-      </li>
-      <li>
-        <a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a>
-      </li>
+       <li><a style="cursor: pointer;"><span class="glyphicon glyphicon-phone"></span>+7 777 049 1104</a></li> 
+      <li *ngIf="isAuthenticated"><a style="cursor: pointer;" (click)="onLogout()">Выйти</a></li>
     </ul>
   </div>
 </nav>
