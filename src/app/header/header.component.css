@@ -3,3 +3,9 @@ nav{
     top: 0;
     z-index: 999;
 }
+img{
+    padding: 0px;
+}
+.navbar-brand{
+    padding: 10px;
+}
