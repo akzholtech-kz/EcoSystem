@@ -1,7 +1,7 @@
-import { ProductService } from './../product.service';
+import { Component, OnDestroy, OnInit, Output } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { AuthorService } from './../author/author.service';
-import { Component, OnInit, OnDestroy, Output, EventEmitter } from '@angular/core';
+import { ProductService } from './../product.service';
 
 
 @Component({
@@ -11,16 +11,17 @@ import { Component, OnInit, OnDestroy, Output, EventEmitter } from '@angular/cor
 })
 export class HeaderComponent implements OnInit, OnDestroy {
   isAuthenticated = false;
-//  @Output() itemselected = new EventEmitter<boolean>()
  private userSub: Subscription;
-  constructor(private authService: AuthorService, private productSer: ProductService) { }
 
+
+  constructor(private authService: AuthorService, private productSer: ProductService) { }
   ngOnInit(){
    this.userSub = this.authService.user.subscribe(user=>{
      this.isAuthenticated = !!user;
       this.productSer.authentic.next(this.isAuthenticated);
    })
   }
+
   onScroll(id: string) {
     document.getElementById(id).scrollIntoView({behavior: 'smooth'})
   }

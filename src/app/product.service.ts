@@ -20,13 +20,13 @@ export class ProductService {
       50
     ),
     new Product(
-      'Қағаз қалдықтары',
+      'Бумажные остатки',
       'https://images.immediate.co.uk/production/volatile/sites/4/2009/07/GettyImages-88623894-29b7fe8.jpg?quality=90&resize=768,574',
       0,
       60
     ),
     new Product(
-      'Шыны',
+      'Стекло',
       'https://www.lrsrecycles.com/wp-content/uploads/2017/10/Glass.png',
       0,
       70

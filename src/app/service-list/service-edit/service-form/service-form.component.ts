@@ -23,7 +23,7 @@ export class ServiceFormComponent implements OnInit, OnDestroy {
   }
   onAddItem(form: NgForm) {
     const value = form.value;
-    const setVal = new Reqest(value.email, value.name, value.amount, this.product);
+    const setVal = new Reqest(value.email, value.name, value.amount, value.address, value.tel, this.product);
     this.dataSer.setNewValue(setVal)
     for(let i of this.proService.getProducts()){
       if(value.name === i.name){

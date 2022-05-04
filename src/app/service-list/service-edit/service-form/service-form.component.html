@@ -18,8 +18,8 @@
           <label for="name">Название</label>
           <select class="form-control" name="name" id="name" ngModel required>
             <option value="Пластмасса">Пластмасса</option>
-            <option value="Қағаз қалдықтары">Қағаз қалдықтары</option>
-            <option value="Шыны">Шыны</option>
+            <option value="Қағаз қалдықтары">Бумажные остатки</option>
+            <option value="Шыны">Стекло</option>
             <option value="Полиэтилен">Полиэтилен</option>
             <option value="Картон">Картон</option>
           </select>
@@ -34,6 +34,29 @@
           ngModel
           [pattern]="'^[1-9]+[0-9]*$'"
           required
+          />
+        </div>
+        <div class="col-sm-2 form-group">
+          <label for="tel">Номер телефона</label>
+          <input 
+          type="tel" 
+          id="tel" 
+          class="form-control" 
+          name="tel"
+          ngModel
+          [pattern]="'^[1-9]+[0-9]*$'"
+          [disabled]="disableMode"
+          />
+        </div>
+        <div class="col-sm-2 form-group">
+          <label for="address">Адрес проживания</label>
+          <input 
+          type="text" 
+          id="address" 
+          class="form-control" 
+          name="address"
+          ngModel
+          [disabled]="disableMode"
           />
         </div>
       </div>

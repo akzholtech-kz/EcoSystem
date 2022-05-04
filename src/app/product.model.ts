@@ -17,11 +17,15 @@ export class Reqest{
     public email: string;
     public name: string;
     public amount: number;
+    public address: string;
+    public tel: number;
     // public product: Product;
-    constructor(email: string, name: string, amount: number, product: Product){
+    constructor(email: string, name: string, amount: number, address: string, tel: number, product: Product){
         this.email = email;
         this.name = name;
         this.amount = amount;
+        this.address = address;
+        this.tel = tel;
         // this.product = product
     }
 }

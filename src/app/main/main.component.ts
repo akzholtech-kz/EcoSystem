@@ -1,3 +1,4 @@
+import { ProductService } from './../product.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./main.component.css']
 })
 export class MainComponent implements OnInit {
+  isAuth: boolean;
 
-  constructor() { }
+  constructor( private proSer: ProductService) { }
 
-  ngOnInit(): void {
+  ngOnInit(){
+    this.proSer.authentic.subscribe(
+      (res: boolean)=>{
+        this.isAuth = res;
+      }
+    )
   }
   onSelect(id: string) {
     document.getElementById(id).scrollIntoView({behavior: 'smooth'})

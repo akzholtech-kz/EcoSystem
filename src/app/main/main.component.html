@@ -11,7 +11,11 @@
       Сбор и сортировка вторичного сырья в <br />Караганде
     </h1>
     <div class="col-xs-12">
-    <button class="main-btn" (click)="onSelect('author')">Хочу сдать сырья</button>
+    <button 
+    class="main-btn" 
+    (click)="onSelect('service')"
+    *ngIf="isAuth"
+    >Хочу сдать сырья</button>
   </div>
   </div>
   
