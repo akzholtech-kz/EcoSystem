@@ -1,11 +1,10 @@
 <app-header></app-header>
 <div class="container">
   <div class="row">
-   
     <app-main></app-main>
-    <app-about *ngIf="isAuthentication"></app-about>
+    <app-about></app-about>
+    <app-service-list></app-service-list>
     <app-auth *ngIf="!isAuthentication"></app-auth>
-    <app-service-list *ngIf="isAuthentication"></app-service-list>
     <app-partners *ngIf="isAuthentication"></app-partners>
   </div>
 </div>

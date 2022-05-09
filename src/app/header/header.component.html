@@ -8,7 +8,7 @@
       <li *ngIf="!isAuthenticated">
         <a (click)="onScroll('author')"> Авторизация</a>
       </li>
-      <li *ngIf="isAuthenticated"><a role="button" (click)="onScroll('about')">Продукты</a></li>
+      <li><a role="button" (click)="onScroll('about')">Продукты</a></li>
       <li *ngIf="isAuthenticated"><a role="button" (click)="onScroll('service')">Услуги</a></li>
       <li *ngIf="isAuthenticated"><a role="button" (click)="onScroll('partners')">О компании</a></li>
       <li><a role="button" (click)="onScroll('contacts')">Контакты</a></li>

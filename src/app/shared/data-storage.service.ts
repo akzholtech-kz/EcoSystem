@@ -14,7 +14,7 @@ export class DataService {
   saveData() {
     this.http
       .put(
-        'https://exosystem-11cdd-default-rtdb.asia-southeast1.firebasedatabase.app/request.json',
+        'https://exosystem-11cdd-default-rtdb.asia-southeast1.firebasedatabase.app/request/request.json',
         this.setProduct
       )
       .subscribe((respone) => {

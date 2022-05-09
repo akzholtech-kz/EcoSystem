@@ -9,12 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ServiceListComponent implements OnInit {
   selectedItem: Product;
+  isAuthentication: boolean;
   constructor(private productSer: ProductService) { }
 
   ngOnInit(): void {
     this.productSer.selectItem.subscribe(
       (item: Product) =>{
         this.selectedItem = item;
+      }
+    )
+    this.productSer.authentic.subscribe(
+      (response: boolean)=>{
+        this.isAuthentication = response;
       }
     )
   }
