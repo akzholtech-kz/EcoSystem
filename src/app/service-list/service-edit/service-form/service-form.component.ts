@@ -13,7 +13,9 @@ export class ServiceFormComponent implements OnInit, OnDestroy {
   product: Product;
   editMode = false;
   disableMode = false;
+  cancel= false;
   date: string;
+  paid = 'Оплачено'
   @Input() val: number;
   constructor( private proService: ProductService,
               private dataSer: DataService) { }
@@ -42,18 +44,30 @@ export class ServiceFormComponent implements OnInit, OnDestroy {
       console.log('not value')
     }
   }
+  onCancel() {
+    this.proService.onCancel()
+  }
 
   onSave() {
+    this.cancel = true;
     this.dataSer.saveData()
     this.editMode = false;
     this.proService.dateSub.next(this.date);
     const newValue = new WaitList('Новый', 2, this.date, this.val)
     this.proService.setList(newValue)
     // this.dataSer.onReset(0)
+
+    setTimeout(()=>{
+      this.cancel= false;
+    }, 100 * 5000)
+  }
+
+  onPay() {
+ this.proService.paid.next(this.paid)
   }
 
   ngOnDestroy(): void {
-
+   
   }
 
 }

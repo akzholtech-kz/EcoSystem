@@ -7,6 +7,7 @@ export class ProductService {
   formItem = new Subject<Product>();
   dateSub = new Subject<string>();
   authentic = new Subject<boolean>();
+  paid = new Subject<string>();
   
   private waitlist: WaitList[] = [
     new WaitList('Выполнено', 1,'2022-03-28' , 45000)
@@ -63,5 +64,8 @@ export class ProductService {
 
   setList(order: WaitList): any {
     this.waitlist.push(order);
+  }
+  onCancel() {
+    this.waitlist[this.waitlist.length-1].name = 'Отказ'
   }
 }

@@ -9,6 +9,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class ServiceWaitListComponent implements OnInit {
  data: string;
+ paid: string = 'Не оплачено'
  waitlist: WaitList[];
   constructor(private proSer: ProductService) { }
 
@@ -19,6 +20,8 @@ export class ServiceWaitListComponent implements OnInit {
        this.data = response
      }
    )
+   this.proSer.paid.subscribe(i=>
+    this.paid = i)
    
   }
   

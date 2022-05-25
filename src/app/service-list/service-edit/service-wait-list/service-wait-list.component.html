@@ -7,6 +7,7 @@
         <th>Номер заявки</th>
         <th>Дата вывоза</th>
         <th>Сумма заявки</th>
+        <th>Статус</th>
       </tr>
       <tr *ngFor="let item of waitlist; let i=index">
           <td>{{i+1}}</td>
@@ -14,6 +15,7 @@
           <td>000{{i+1}}</td>
           <td>{{item.date}}</td>
           <td>{{item.sum}}</td>
+          <td>{{paid}}</td>
       </tr>
     </table>
   </div>
